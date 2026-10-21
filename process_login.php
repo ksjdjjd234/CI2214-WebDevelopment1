@@ -30,6 +30,7 @@ if ($result->num_rows > 0) {
 
     $row = $result->fetch_assoc();
     $stored_hash = $row['password'];
+    echo $stored_hash;
 
     if (password_verify($pass, $stored_hash)) {
 
