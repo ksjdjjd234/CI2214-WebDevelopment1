@@ -3,10 +3,10 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "sql207.infinityfree.com";
-$username = "if0_43217470";
-$password = "tfnn0jDG5HRdthA";
-$dbname = "if0_43217470_carrental";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "carrental";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
