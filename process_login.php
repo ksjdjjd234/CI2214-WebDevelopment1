@@ -27,25 +27,41 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-
     $row = $result->fetch_assoc();
-    $stored_hash = $row['password'];
-    echo $stored_hash;
+    $stored_password = $row['password'];
 
-    if (password_verify($pass, $stored_hash)) {
+    // If already hashed
+    if (password_verify($pass, $stored_password)) {
 
         session_start();
         $_SESSION['username'] = $user;
 
         header("Location: dashboard.php");
         exit();
-
-    } else {
-
-        echo "Invalid password.";
-
     }
 
+    // If still plain text
+    elseif ($pass === $stored_password) {
+
+        // Convert to hash automatically
+        $newHash = password_hash($pass, PASSWORD_DEFAULT);
+
+        $update = $conn->prepare(
+            "UPDATE admins SET password = ? WHERE username = ?"
+        );
+        $update->bind_param("ss", $newHash, $user);
+        $update->execute();
+
+        session_start();
+        $_SESSION['username'] = $user;
+
+        header("Location: dashboard.php");
+        exit();
+    }
+
+    else {
+        echo "Invalid password.";
+    }
 } else {
     echo "User '$user' not found in the database admins table.";
 }
