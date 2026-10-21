@@ -1,34 +1,48 @@
 <?php
+// Turn on error reporting to see everything
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "carrental";
-
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Check if form data was received
+if (!isset($_POST['username']) || !isset($_POST['password'])) {
+    die("Error: No form data received. Make sure you submitted the form from admin.php.");
+}
 
 $user = $_POST['username'];
 $pass = $_POST['password'];
 
-
-$stmt = $conn->prepare("SELECT * FROM admins WHERE username=? AND password=MD5(?)");
-$stmt->bind_param("ss", $user, $pass);
+$stmt = $conn->prepare("SELECT password FROM admins WHERE username = ?");
+$stmt->bind_param("s", $user);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    session_start();
-    $_SESSION['username'] = $user;
-    header("Location: dashboard.php");
-    exit();
+    $row = $result->fetch_assoc();
+    $stored_hash = $row['password'];
 
+    echo "User found in database! <br>";
+    
+    // Test password verification (for debugging purposes)
+    if (password_verify($pass, $stored_hash)) {
+        echo "Password verified successfully! Logging in...";
+        session_start();
+        $_SESSION['username'] = $user;
+        header("Location: dashboard.php");
+        exit();
+    } else {
+        echo "Password verification FAILED. The typed password does not match the database hash.";
+    }
 } else {
-    header("Location: admin.php?error=1");
-    exit();
+    echo "User '$user' not found in the database admins table.";
 }
 ?>
-
