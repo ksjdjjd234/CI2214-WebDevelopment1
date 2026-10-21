@@ -27,7 +27,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Users</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo filemtime('style.css'); ?>">
+    <link rel="stylesheet" href="style.css">
     <style>
         .login-box {
             background-color: #F8F9F9;
