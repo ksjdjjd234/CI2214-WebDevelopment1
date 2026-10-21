@@ -92,18 +92,18 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `model`, `plate`, `year`, `status`, `image`) VALUES
-(1, 'Toyota Vios', 'BAG-3084', 2020, 'available', 'toyota-vios.jpg'),
-(3, 'Audi R8', 'BE-9559', 2024, 'available', 'audir8.jpg'),
-(4, 'Toyota Vios', 'BA 1234', 2020, 'available', 'default-car.jpg'),
-(5, 'Honda City', 'BB 5678', 2021, 'available', 'default-car.jpg'),
-(6, 'Kia Sportage', 'BD 4321', 2019, 'rented', 'default-car.jpg'),
-(7, 'Nissan Almera', 'BE 8765', 2022, 'available', 'default-car.jpg'),
-(8, 'Hyundai Tucson', 'BF 2468', 2021, 'maintenance', 'default-car.jpg'),
-(9, 'Toyota Corolla', 'BG 1357', 2020, 'available', 'default-car.jpg'),
-(10, 'Mazda 3', 'BH 9753', 2018, 'rented', 'default-car.jpg'),
-(11, 'Mitsubishi Attrage', 'BJ 8642', 2023, 'available', 'default-car.jpg'),
-(12, 'Suzuki Swift', 'BK 1122', 2022, 'available', 'default-car.jpg'),
-(13, 'Ford Ranger', 'BL 5566', 2021, 'available', 'default-car.jpg');
+(1, 'Toyota Vios', 'BAG-3084', 2020, 'available', 'toyota-vios.webp'),
+(3, 'Audi R8', 'BE-9559', 2024, 'available', 'audir8.webp'),
+(4, 'Toyota Vios', 'BA 1234', 2020, 'available', 'toyota-vios.webp'),
+(5, 'Honda City', 'BB 5678', 2021, 'available', 'honda-city.webp'),
+(6, 'Kia Sportage', 'BD 4321', 2019, 'rented', 'Kia-Sportage.webp'),
+(7, 'Nissan Almera', 'BE 8765', 2022, 'available', 'nissan-almera.webp'),
+(8, 'Hyundai Tucson', 'BF 2468', 2021, 'maintenance', 'hyundai-tucson.webp'),
+(9, 'Toyota Corolla', 'BG 1357', 2020, 'available', 'toyota-corolla.webp'),
+(10, 'Mazda 3', 'BH 9753', 2018, 'rented', 'mazda-3.webp'),
+(11, 'Mitsubishi Attrage', 'BJ 8642', 2023, 'available', 'mitsubishi-attrage.webp'),
+(12, 'Suzuki Swift', 'BK 1122', 2022, 'available', 'suzuki-swift.webp'),
+(13, 'Ford Ranger', 'BL 5566', 2021, 'available', 'ford-ranger.webp');
 
 -- --------------------------------------------------------
 
