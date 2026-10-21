@@ -30,7 +30,8 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $stored_hash = $row['password'];
 
-    echo "User found in database! <br>";
+    echo "Typed Password: " . $pass . "<br>";
+    echo "Database Password: " . $stored_hash . "<br>";
     
     // Test password verification (for debugging purposes)
     if (password_verify($pass, $stored_hash)) {
