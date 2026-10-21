@@ -10,7 +10,7 @@
     <header>
         <h1>Car Rental</h1>
     </header>
-    <header class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/car-rental-home.jpg') no-repeat center center/cover;">
+    <header class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/car-rental-home.webp') no-repeat center center/cover;">
     <div class="hero-content">
         <h1>Welcome to Velocity Car Rental</h1>
         <p>Drive your dream car today. Fast, reliable, and affordable.</p>
